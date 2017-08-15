@@ -27,6 +27,8 @@ body, html {
     background-color: $mine-shaft;
     max-width: 1100px;
     margin: 0 auto;
+    overflow: auto;
+    height: 100%;
 
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -212,17 +214,17 @@ body, html {
       @include body-view;
 
       .main {
-        display: flex;
+        //display: flex;
 
         @media screen and (max-width: $break-small) {
           flex-direction: column;
         }
 
         #movie-list {
-          flex-basis: 75%;
+          //flex-basis: 75%;
         }
         #movie-filter {
-          flex-basis: 25%;
+          //flex-basis: 25%;
 
           @media screen and (max-width: $break-small) {
             order: -1;
@@ -233,6 +235,9 @@ body, html {
 
     #movie-list {
       padding-top: 2rem;
+      width: 70%;
+      margin: 0;
+      float: left;
 
       .movie {
         border-bottom: ridge 2px $dove-gray;
@@ -279,8 +284,11 @@ body, html {
     #movie-filter {
       color: $white;
       font-size: 1.15rem;
-      margin-bottom: 2rem;
+      margin: 0;
       padding-left: 2rem;
+      width: 20%;
+      float: left;
+      display: block;
 
       @media screen and (max-width: $break-small) {
         padding-bottom: 2rem;
