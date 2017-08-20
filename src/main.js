@@ -2,7 +2,7 @@
 import Vue from "vue";
 import "./style.scss";
 import VueResource from "vue-resource";
-import { checkFilter } from "./util/bus"
+import { checkFilter, setDay } from "./util/bus"
 import VueRouter from 'vue-router';
 import routes from "./util/routes";
 
@@ -33,6 +33,8 @@ new Vue({
             this.movies = response.data;
         });
         this.$bus.$on('check-filter', checkFilter.bind(this));
+
+        this.$bus.$on("set-day", setDay.bind(this));
     },
     router
 });
