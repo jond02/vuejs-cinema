@@ -12,7 +12,7 @@
         props: [ "selected" ],
         data: function() {
             return {
-                days: [0, 1, 2, 3, 4, 5, 6].map(function(num) {this.$moment().add(num, "days");})
+                days: [0, 1, 2, 3, 4, 5, 6].map(num => this.$moment().add(num, "days"))
             }
         },
         methods: {
