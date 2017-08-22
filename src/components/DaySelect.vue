@@ -10,23 +10,23 @@
 
     export default {
         props: [ "selected" ],
-        data() {
+        data: function() {
             return {
-                days: [0, 1, 2, 3, 4, 5, 6].map(num => this.$moment().add(num, "days"))
+                days: [0, 1, 2, 3, 4, 5, 6].map(function(num) {this.$moment().add(num, "days");})
             }
         },
         methods: {
-            formatDay(raw) {
+            formatDay: function(raw) {
                 if (raw.isSame(this.$moment(), "day")) {
                     return "Today";
                 } else {
                     return raw.format("ddd MM/DD");
                 }
             },
-            isActive(day) {
+            isActive: function(day) {
                 return day.isSame(this.selected, "day");
             },
-            selectDay(day) {
+            selectDay: function(day) {
                 this.$bus.$emit("set-day", day);
             }
         }

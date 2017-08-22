@@ -25,7 +25,7 @@
     export default {
         props: [ "movies"],
         computed: {
-            movie() {
+            movie: function() {
                 let movie = this.movies.find(movie => movie.id === this.$route.params.id);
                 return movie ? movie.movie : null;
             }

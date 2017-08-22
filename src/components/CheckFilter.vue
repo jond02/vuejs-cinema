@@ -8,14 +8,14 @@
 <script>
 
     export default {
-        data() {
+        data: function() {
             return {
                 checked: false
-            }
+            };
         },
         props: [ "title", "category"],
         methods: {
-            checkFilter() {
+            checkFilter: function() {
                 this.checked = !this.checked;
                 this.$bus.$emit("check-filter", this.category, this.title, this.checked);
             }

@@ -69,12 +69,12 @@
             }
         },
         computed: {
-            filteredMovies() {
+            filteredMovies: function() {
                 return this.movies
                     .filter(this.moviePassesGenreFilter)
                     .filter(movie => movie.sessions.find(this.sessionPassesTimeFilter));
             },
-            noResults() {
+            noResults: function() {
                 let times = this.time.join(", ");
                 let genres = this.genre.join(", ");
                 return `No results for ${times}${times.length && genres.length ? ", " : ""} ${genres}`;

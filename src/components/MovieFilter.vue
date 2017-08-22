@@ -19,7 +19,7 @@
     import CheckFilter from "./CheckFilter.vue";
 
     export default {
-        data() {
+        data: function() {
             return {
                 genres,
                 times
